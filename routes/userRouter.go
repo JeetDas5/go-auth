@@ -7,7 +7,10 @@ import (
 )
 
 func UserRoutes(router *gin.Engine) {
-	router.Use(middleware.AuthMiddleware())
-	router.GET("/users", controllers.GetUsers())
-	router.GET("/users/:user_id", controllers.GetUser())
+	userRoutes := router.Group("/")
+	userRoutes.Use(middleware.AuthMiddleware())
+	{
+		userRoutes.GET("/users", controllers.GetUsers())
+		userRoutes.GET("/users/:user_id", controllers.GetUser())
+	}
 }

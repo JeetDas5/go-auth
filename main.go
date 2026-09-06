@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"net/http"
 	"os"
@@ -36,6 +37,9 @@ func main() {
 		c.JSON(http.StatusOK, gin.H{"success": "API 2 is running"})
 	})
 
-	router.Run(":" + port)
-
+	fmt.Println("Server running on port:", port)
+	err = router.Run(":" + port)
+	if err != nil {
+		log.Fatal(err)
+	}
 }
