@@ -1,0 +1,10 @@
+.env
+main
+golang-jwt
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
