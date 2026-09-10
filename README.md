@@ -20,19 +20,19 @@ A RESTful authentication and user management API built with Go, Gin, MongoDB, an
 ```
 .
 |-- controllers/
-|   `-- userController.go     # Request handlers for signup, login, user queries
+|   |-- userController.go     # Request handlers for signup, login, user queries
 |-- database/
-|   `-- databaseConnection.go # MongoDB client initialization and collection helper
+|   |-- databaseConnection.go # MongoDB client initialization and collection helper
 |-- helpers/
 |   |-- authHelper.go         # Role and user permission validation
-|   `-- tokenHelper.go        # JWT creation, claim parsing, and validation
+|   |-- tokenHelper.go        # JWT creation, claim parsing, and validation
 |-- middleware/
-|   `-- authMiddleware.go     # Gin middleware for validating request token header
+|   |-- authMiddleware.go     # Gin middleware for validating request token header
 |-- models/
-|   `-- userModel.go          # User struct definition and validation tags
+|   |-- userModel.go          # User struct definition and validation tags
 |-- routes/
 |   |-- authRouter.go         # Public authentication routes (/signup, /login)
-|   `-- userRouter.go         # Protected user routes (/users, /users/:user_id)
+|   |-- userRouter.go         # Protected user routes (/users, /users/:user_id)
 |-- main.go                   # Application entry point and router setup
 |-- go.mod
 |-- go.sum
